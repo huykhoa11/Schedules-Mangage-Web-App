@@ -1,0 +1,36 @@
+<div class="container">
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <%= notice %>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+</div>
+
+<div class="container">
+<h1 style="color: green;">授業の情報</h1><hr><br>
+
+
+  <ul class="list-group">
+    <li class="list-group-item">
+    		<strong>Title:</strong>
+    		<%= @schedule.title %></li>
+    <li class="list-group-item">
+    		<strong>Day:</strong>
+    		<%= @schedule.day %></li>
+    <li class="list-group-item">
+    		<strong>Lecture:</strong>
+    		<%= @schedule.lecture %></li>
+    <li class="list-group-item">
+    		  <strong>Room:</strong>
+    			<%= @schedule.room %></li>
+  </ul>
+
+
+
+<br>
+<%= link_to '編集', edit_schedule_path(@schedule), class: 'btn btn-warning btn' %>
+<%= link_to ' 削除 ', @schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
+                class: 'btn btn-danger btn' %> 
+<%= link_to '戻る', "/schedules/login_check", class: 'btn btn-info' %>
+</div>

@@ -1,0 +1,73 @@
+<%= form_with(model: schedule, local: true) do |form| %>
+  <% if schedule.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(schedule.errors.count, "error") %> prohibited this schedule from being saved:</h2>
+
+      <ul>
+        <% schedule.errors.full_messages.each do |message| %>
+          <div class="container">
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <li><%= message %></li>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          </div>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class ="container">
+
+  <div class="field form-group">
+    <h4><label class="form-label">科目名</label></h4>
+    <%= form.text_field :title, class: 'form-control'%>
+    <br><br>
+  
+    <h4><%= form.label :曜日 %></h4>
+    <div class="form-check form-check-inline">
+      <%= form.check_box :day, {multiple: false}, "月", nil %>
+      <label class="form-check-label">月</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <%= form.check_box :day, {multiple: false}, "火", nil %>
+      <label class="form-check-label">火</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <%= form.check_box :day, {multiple: false}, "水", nil %>
+      <label class="form-check-label">水</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <%= form.check_box :day, {multiple: false}, "木", nil %>
+      <label class="form-check-label">木</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <%= form.check_box :day, {multiple: false}, "金", nil %>
+      <label class="form-check-label">金</label>
+    </div>
+    <br><br><br>
+
+  
+    <h4><label class="form-label">限目</label></h4>
+      <%= form.text_field :lecture, class: 'form-control'%>
+    <br><br><br>
+
+  
+    <h4><label class="form-label">教室</label></h4>
+      <%= form.text_field :room, class: 'form-control'%>
+    <br>
+
+  </div>
+
+
+  <div class="actions">
+    <%= form.submit '作成', class: 'btn btn-warning' %>
+    <%= link_to '表示', @schedule, class: 'btn btn-primary' %>     <%#  %>
+    <%= link_to '戻る', "/schedules/login_check", class: 'btn btn-info' %>
+  </div><br>
+
+  
+</div>
+
+<% end %>

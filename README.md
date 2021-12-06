@@ -1,7 +1,7 @@
 # README
 Ruby on Rails application
 * Ruby version 6.1
-* Database PostgreSQL
+* Database: Default SQLite3
 * ...
 
 # Preview

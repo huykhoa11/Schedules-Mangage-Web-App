@@ -1,11 +1,6 @@
 <html>
 <div class="container">
-<div class="alert alert-success alert-dismissible fade show" role="alert">
-  <strong>Hi There!</strong>&ensp;<%= notice %>
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
+
 
 
 
@@ -67,6 +62,7 @@
 
 <h1>Schedules</h1>
 
+
 <table class="table table-bordered table-hover">
   <thead>
     <tr style="background-color: #DFDFDF">
@@ -85,77 +81,87 @@
       <th>9:00 ~ 10:30</th>
       <td>
         <% @schedules.each do |schedule| %>
+        <% if schedule.user == current_user %>
           <% if schedule.day == '月' && schedule.lecture == 1 %>
-          <p style="background-color: #FCC9F5">
+          <p style="background-color: #FFE2F1">
             <%= schedule.title %><br>
             <%= schedule.lecture %><br>
             <%= schedule.room %><br>
-            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
-            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to '表示 ', schedule, class: 'btn btn-outline-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-outline-warning btn-sm' %>
             <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
-                class: 'btn btn-danger btn-sm' %><br><br>
+                class: 'btn btn-outline-danger btn-sm' %><br><br>
           </p>
           <% end %>
+        <% end %>
         <% end %>
       </td>
       <td>
         <% @schedules.each do |schedule| %>
+        <% if schedule.user == current_user %>
         <% if schedule.day == '火' && schedule.lecture == 1 %>
-        <p style="background-color: #FCC9F5">
+        <p style="background-color: #FFE2F1">
             <%= schedule.title %><br>
             <%= schedule.lecture %><br>
             <%= schedule.room %><br>
-            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
-            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to '表示 ', schedule, class: 'btn btn-outline-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-outline-warning btn-sm' %>
             <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
-                class: 'btn btn-danger btn-sm' %><br><br>
+                class: 'btn btn-outline-danger btn-sm' %><br><br>
           </p>
           <% end %>
+        <% end %>
         <% end %>
       </td>
       <td>
         <% @schedules.each do |schedule| %>
+        <% if schedule.user == current_user %>
         <% if schedule.day == '水' && schedule.lecture == 1 %>
-          <p style="background-color: #FCC9F5">
+          <p style="background-color: #FFE2F1">
             <%= schedule.title %><br>
             <%= schedule.lecture %><br>
             <%= schedule.room %><br>
-            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
-            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to '表示 ', schedule, class: 'btn btn-outline-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-outline-warning btn-sm' %>
             <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
-                class: 'btn btn-danger btn-sm' %><br><br>
+                class: 'btn btn-outline-danger btn-sm' %><br><br>
           </p>
           <% end %>
+        <% end %>
         <% end %>
       </td>
       <td>
         <% @schedules.each do |schedule| %>
+        <% if schedule.user == current_user %>
         <% if schedule.day == '木' && schedule.lecture == 1 %>
-        <p style="background-color: #FCC9F5">
+        <p style="background-color: #FFE2F1">
             <%= schedule.title %><br>
             <%= schedule.lecture %><br>
             <%= schedule.room %><br>
-            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
-            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to '表示 ', schedule, class: 'btn btn-outline-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-outline-warning btn-sm' %>
             <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
-                class: 'btn btn-danger btn-sm' %><br><br>
+                class: 'btn btn-outline-danger btn-sm' %><br><br>
           </p>
           <% end %>
+        <% end %>
         <% end %>
       </td>
       <td>
         <% @schedules.each do |schedule| %>
+        <% if schedule.user == current_user %>
         <% if schedule.day == '金' && schedule.lecture == 1 %>
-        <p style="background-color: #FCC9F5">
+        <p style="background-color: #FFE2F1">
             <%= schedule.title %><br>
             <%= schedule.lecture %><br>
             <%= schedule.room %><br>
-            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
-            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to '表示 ', schedule, class: 'btn btn-outline-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-outline-warning btn-sm' %>
             <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
-                class: 'btn btn-danger btn-sm' %><br><br>
+                class: 'btn btn-outline-danger btn-sm' %><br><br>
           </p>
           <% end %>
+        <% end %>
         <% end %>
       </td>
     </tr>
@@ -165,81 +171,91 @@
 
 
     <tr>
-      <th scope="row">2限</th>
-      <th>10:40 ~ 12:10</th>
+      <th scope="row">1限</th>
+      <th>9:00 ~ 10:30</th>
       <td>
         <% @schedules.each do |schedule| %>
+        <% if schedule.user == current_user %>
           <% if schedule.day == '月' && schedule.lecture == 2 %>
-          <p style="background-color: #FCC9F5">
+          <p style="background-color: #FFE2F1">
             <%= schedule.title %><br>
             <%= schedule.lecture %><br>
             <%= schedule.room %><br>
-            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
-            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to '表示 ', schedule, class: 'btn btn-outline-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-outline-warning btn-sm' %>
             <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
-                class: 'btn btn-danger btn-sm' %><br><br>
+                class: 'btn btn-outline-danger btn-sm' %><br><br>
           </p>
           <% end %>
+        <% end %>
         <% end %>
       </td>
       <td>
         <% @schedules.each do |schedule| %>
+        <% if schedule.user == current_user %>
         <% if schedule.day == '火' && schedule.lecture == 2 %>
-        <p style="background-color: #FCC9F5">
+        <p style="background-color: #FFE2F1">
             <%= schedule.title %><br>
             <%= schedule.lecture %><br>
             <%= schedule.room %><br>
-            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
-            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to '表示 ', schedule, class: 'btn btn-outline-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-outline-warning btn-sm' %>
             <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
-                class: 'btn btn-danger btn-sm' %><br><br>
+                class: 'btn btn-outline-danger btn-sm' %><br><br>
           </p>
           <% end %>
+        <% end %>
         <% end %>
       </td>
       <td>
         <% @schedules.each do |schedule| %>
+        <% if schedule.user == current_user %>
         <% if schedule.day == '水' && schedule.lecture == 2 %>
-        <p style="background-color: #FCC9F5">
+          <p style="background-color: #FFE2F1">
             <%= schedule.title %><br>
             <%= schedule.lecture %><br>
             <%= schedule.room %><br>
-            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
-            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to '表示 ', schedule, class: 'btn btn-outline-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-outline-warning btn-sm' %>
             <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
-                class: 'btn btn-danger btn-sm' %><br><br>
+                class: 'btn btn-outline-danger btn-sm' %><br><br>
           </p>
           <% end %>
+        <% end %>
         <% end %>
       </td>
       <td>
         <% @schedules.each do |schedule| %>
+        <% if schedule.user == current_user %>
         <% if schedule.day == '木' && schedule.lecture == 2 %>
-        <p style="background-color: #FCC9F5">
+        <p style="background-color: #FFE2F1">
             <%= schedule.title %><br>
             <%= schedule.lecture %><br>
             <%= schedule.room %><br>
-            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
-            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to '表示 ', schedule, class: 'btn btn-outline-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-outline-warning btn-sm' %>
             <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
-                class: 'btn btn-danger btn-sm' %><br><br>
+                class: 'btn btn-outline-danger btn-sm' %><br><br>
           </p>
           <% end %>
+        <% end %>
         <% end %>
       </td>
       <td>
         <% @schedules.each do |schedule| %>
+        <% if schedule.user == current_user %>
         <% if schedule.day == '金' && schedule.lecture == 2 %>
-        <p style="background-color: #FCC9F5">
+        <p style="background-color: #FFE2F1">
             <%= schedule.title %><br>
             <%= schedule.lecture %><br>
             <%= schedule.room %><br>
-            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
-            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to '表示 ', schedule, class: 'btn btn-outline-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-outline-warning btn-sm' %>
             <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
-                class: 'btn btn-danger btn-sm' %><br><br>
+                class: 'btn btn-outline-danger btn-sm' %><br><br>
           </p>
           <% end %>
+        <% end %>
         <% end %>
       </td>
     </tr>
@@ -253,81 +269,91 @@
 
 
     <tr>
-      <th scope="row">3限</th>
-      <th>12:50 ~ 14:20</th>
+      <th scope="row">1限</th>
+      <th>9:00 ~ 10:30</th>
       <td>
         <% @schedules.each do |schedule| %>
+        <% if schedule.user == current_user %>
           <% if schedule.day == '月' && schedule.lecture == 3 %>
-          <p style="background-color: #FCC9F5">
+          <p style="background-color: #FFE2F1">
             <%= schedule.title %><br>
             <%= schedule.lecture %><br>
             <%= schedule.room %><br>
-            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
-            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to '表示 ', schedule, class: 'btn btn-outline-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-outline-warning btn-sm' %>
             <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
-                class: 'btn btn-danger btn-sm' %><br><br>
+                class: 'btn btn-outline-danger btn-sm' %><br><br>
           </p>
           <% end %>
+        <% end %>
         <% end %>
       </td>
       <td>
         <% @schedules.each do |schedule| %>
+        <% if schedule.user == current_user %>
         <% if schedule.day == '火' && schedule.lecture == 3 %>
-        <p style="background-color: #FCC9F5">
+        <p style="background-color: #FFE2F1">
             <%= schedule.title %><br>
             <%= schedule.lecture %><br>
             <%= schedule.room %><br>
-            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
-            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to '表示 ', schedule, class: 'btn btn-outline-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-outline-warning btn-sm' %>
             <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
-                class: 'btn btn-danger btn-sm' %><br><br>
+                class: 'btn btn-outline-danger btn-sm' %><br><br>
           </p>
           <% end %>
+        <% end %>
         <% end %>
       </td>
       <td>
         <% @schedules.each do |schedule| %>
+        <% if schedule.user == current_user %>
         <% if schedule.day == '水' && schedule.lecture == 3 %>
-        <p style="background-color: #FCC9F5">
+          <p style="background-color: #FFE2F1">
             <%= schedule.title %><br>
             <%= schedule.lecture %><br>
             <%= schedule.room %><br>
-            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
-            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to '表示 ', schedule, class: 'btn btn-outline-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-outline-warning btn-sm' %>
             <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
-                class: 'btn btn-danger btn-sm' %><br><br>
+                class: 'btn btn-outline-danger btn-sm' %><br><br>
           </p>
           <% end %>
+        <% end %>
         <% end %>
       </td>
       <td>
         <% @schedules.each do |schedule| %>
+        <% if schedule.user == current_user %>
         <% if schedule.day == '木' && schedule.lecture == 3 %>
-        <p style="background-color: #FCC9F5">
+        <p style="background-color: #FFE2F1">
             <%= schedule.title %><br>
             <%= schedule.lecture %><br>
             <%= schedule.room %><br>
-            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
-            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to '表示 ', schedule, class: 'btn btn-outline-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-outline-warning btn-sm' %>
             <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
-                class: 'btn btn-danger btn-sm' %><br><br>
+                class: 'btn btn-outline-danger btn-sm' %><br><br>
           </p>
           <% end %>
+        <% end %>
         <% end %>
       </td>
       <td>
         <% @schedules.each do |schedule| %>
+        <% if schedule.user == current_user %>
         <% if schedule.day == '金' && schedule.lecture == 3 %>
-        <p style="background-color: #FCC9F5">
+        <p style="background-color: #FFE2F1">
             <%= schedule.title %><br>
             <%= schedule.lecture %><br>
             <%= schedule.room %><br>
-            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
-            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to '表示 ', schedule, class: 'btn btn-outline-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-outline-warning btn-sm' %>
             <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
-                class: 'btn btn-danger btn-sm' %><br><br>
+                class: 'btn btn-outline-danger btn-sm' %><br><br>
           </p>
           <% end %>
+        <% end %>
         <% end %>
       </td>
     </tr>
@@ -336,81 +362,91 @@
 
 
     <tr>
-      <th scope="row">4限</th>
-      <th>14:30 ~ 16:00</th>
+      <th scope="row">1限</th>
+      <th>9:00 ~ 10:30</th>
       <td>
         <% @schedules.each do |schedule| %>
+        <% if schedule.user == current_user %>
           <% if schedule.day == '月' && schedule.lecture == 4 %>
-          <p style="background-color: #FCC9F5">
+          <p style="background-color: #FFE2F1">
             <%= schedule.title %><br>
             <%= schedule.lecture %><br>
             <%= schedule.room %><br>
-            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
-            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to '表示 ', schedule, class: 'btn btn-outline-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-outline-warning btn-sm' %>
             <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
-                class: 'btn btn-danger btn-sm' %><br><br>
+                class: 'btn btn-outline-danger btn-sm' %><br><br>
           </p>
           <% end %>
+        <% end %>
         <% end %>
       </td>
       <td>
         <% @schedules.each do |schedule| %>
+        <% if schedule.user == current_user %>
         <% if schedule.day == '火' && schedule.lecture == 4 %>
-        <p style="background-color: #FCC9F5">
+        <p style="background-color: #FFE2F1">
             <%= schedule.title %><br>
             <%= schedule.lecture %><br>
             <%= schedule.room %><br>
-            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
-            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to '表示 ', schedule, class: 'btn btn-outline-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-outline-warning btn-sm' %>
             <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
-                class: 'btn btn-danger btn-sm' %><br><br>
+                class: 'btn btn-outline-danger btn-sm' %><br><br>
           </p>
           <% end %>
+        <% end %>
         <% end %>
       </td>
       <td>
         <% @schedules.each do |schedule| %>
+        <% if schedule.user == current_user %>
         <% if schedule.day == '水' && schedule.lecture == 4 %>
-        <p style="background-color: #FCC9F5">
+          <p style="background-color: #FFE2F1">
             <%= schedule.title %><br>
             <%= schedule.lecture %><br>
             <%= schedule.room %><br>
-            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
-            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to '表示 ', schedule, class: 'btn btn-outline-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-outline-warning btn-sm' %>
             <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
-                class: 'btn btn-danger btn-sm' %><br><br>
+                class: 'btn btn-outline-danger btn-sm' %><br><br>
           </p>
           <% end %>
+        <% end %>
         <% end %>
       </td>
       <td>
         <% @schedules.each do |schedule| %>
+        <% if schedule.user == current_user %>
         <% if schedule.day == '木' && schedule.lecture == 4 %>
-        <p style="background-color: #FCC9F5">
+        <p style="background-color: #FFE2F1">
             <%= schedule.title %><br>
             <%= schedule.lecture %><br>
             <%= schedule.room %><br>
-            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
-            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to '表示 ', schedule, class: 'btn btn-outline-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-outline-warning btn-sm' %>
             <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
-                class: 'btn btn-danger btn-sm' %><br><br>
+                class: 'btn btn-outline-danger btn-sm' %><br><br>
           </p>
           <% end %>
+        <% end %>
         <% end %>
       </td>
       <td>
         <% @schedules.each do |schedule| %>
+        <% if schedule.user == current_user %>
         <% if schedule.day == '金' && schedule.lecture == 4 %>
-        <p style="background-color: #FCC9F5">
+        <p style="background-color: #FFE2F1">
             <%= schedule.title %><br>
             <%= schedule.lecture %><br>
             <%= schedule.room %><br>
-            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
-            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to '表示 ', schedule, class: 'btn btn-outline-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-outline-warning btn-sm' %>
             <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
-                class: 'btn btn-danger btn-sm' %><br><br>
+                class: 'btn btn-outline-danger btn-sm' %><br><br>
           </p>
           <% end %>
+        <% end %>
         <% end %>
       </td>
     </tr>
@@ -419,86 +455,97 @@
 
 
     <tr>
-      <th scope="row">5限</th>
-      <th>16:10 ~ 17:40</th>
+      <th scope="row">1限</th>
+      <th>9:00 ~ 10:30</th>
       <td>
         <% @schedules.each do |schedule| %>
+        <% if schedule.user == current_user %>
           <% if schedule.day == '月' && schedule.lecture == 5 %>
-          <p style="background-color: #FCC9F5">
+          <p style="background-color: #FFE2F1">
             <%= schedule.title %><br>
             <%= schedule.lecture %><br>
             <%= schedule.room %><br>
-            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
-            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to '表示 ', schedule, class: 'btn btn-outline-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-outline-warning btn-sm' %>
             <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
-                class: 'btn btn-danger btn-sm' %><br><br>
+                class: 'btn btn-outline-danger btn-sm' %><br><br>
           </p>
           <% end %>
+        <% end %>
         <% end %>
       </td>
       <td>
         <% @schedules.each do |schedule| %>
+        <% if schedule.user == current_user %>
         <% if schedule.day == '火' && schedule.lecture == 5 %>
-        <p style="background-color: #FCC9F5">
+        <p style="background-color: #FFE2F1">
             <%= schedule.title %><br>
             <%= schedule.lecture %><br>
             <%= schedule.room %><br>
-            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
-            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to '表示 ', schedule, class: 'btn btn-outline-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-outline-warning btn-sm' %>
             <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
-                class: 'btn btn-danger btn-sm' %><br><br>
+                class: 'btn btn-outline-danger btn-sm' %><br><br>
           </p>
           <% end %>
+        <% end %>
         <% end %>
       </td>
       <td>
         <% @schedules.each do |schedule| %>
+        <% if schedule.user == current_user %>
         <% if schedule.day == '水' && schedule.lecture == 5 %>
-        <p style="background-color: #FCC9F5">
+          <p style="background-color: #FFE2F1">
             <%= schedule.title %><br>
             <%= schedule.lecture %><br>
             <%= schedule.room %><br>
-            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
-            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to '表示 ', schedule, class: 'btn btn-outline-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-outline-warning btn-sm' %>
             <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
-                class: 'btn btn-danger btn-sm' %><br><br>
+                class: 'btn btn-outline-danger btn-sm' %><br><br>
           </p>
           <% end %>
+        <% end %>
         <% end %>
       </td>
       <td>
         <% @schedules.each do |schedule| %>
+        <% if schedule.user == current_user %>
         <% if schedule.day == '木' && schedule.lecture == 5 %>
-        <p style="background-color: #FCC9F5">
+        <p style="background-color: #FFE2F1">
             <%= schedule.title %><br>
             <%= schedule.lecture %><br>
             <%= schedule.room %><br>
-            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
-            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to '表示 ', schedule, class: 'btn btn-outline-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-outline-warning btn-sm' %>
             <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
-                class: 'btn btn-danger btn-sm' %><br><br>
+                class: 'btn btn-outline-danger btn-sm' %><br><br>
           </p>
           <% end %>
+        <% end %>
         <% end %>
       </td>
       <td>
         <% @schedules.each do |schedule| %>
+        <% if schedule.user == current_user %>
         <% if schedule.day == '金' && schedule.lecture == 5 %>
-        <p style="background-color: #FCC9F5">
+        <p style="background-color: #FFE2F1">
             <%= schedule.title %><br>
             <%= schedule.lecture %><br>
             <%= schedule.room %><br>
-            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
-            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to '表示 ', schedule, class: 'btn btn-outline-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-outline-warning btn-sm' %>
             <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
-                class: 'btn btn-danger btn-sm' %><br><br>
+                class: 'btn btn-outline-danger btn-sm' %><br><br>
           </p>
           <% end %>
+        <% end %>
         <% end %>
       </td>
     </tr>
   </tbody>
 </table>
+
 
 <br>
 

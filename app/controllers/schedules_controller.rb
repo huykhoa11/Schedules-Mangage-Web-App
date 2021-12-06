@@ -1,6 +1,7 @@
 class SchedulesController < ApplicationController
   before_action :set_schedule, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, only: :login_check
+  #before_action :correct_user, only: [:edit, :update, :find, :destroy]
 
   # GET /schedules or /schedules.json
   def index
@@ -12,7 +13,8 @@ class SchedulesController < ApplicationController
   end
 
  def find
-    @schedules = Schedule.all
+    #@schedules = Schedule.all
+    @schedules = current_user.schedules
     @schedules = Array.new
     if request.post? then
       @schedules = Schedule.where "title like ?",'%' + params[:find] + '%'
@@ -28,7 +30,8 @@ class SchedulesController < ApplicationController
 
   # GET /schedules/new
   def new
-    @schedule = Schedule.new
+    #@schedule = Schedule.new
+    @schedule = current_user.schedules.build  
   end
 
   # GET /schedules/1/edit
@@ -37,7 +40,8 @@ class SchedulesController < ApplicationController
 
   # POST /schedules or /schedules.json
   def create
-    @schedule = Schedule.new(schedule_params)
+    #@schedule = Schedule.new(schedule_params)
+    @schedule = current_user.schedules.build(schedule_params)
 
     respond_to do |format|
       if @schedule.save
@@ -72,6 +76,12 @@ class SchedulesController < ApplicationController
     end
   end
 
+  def correct_user
+    @schedule = current_user.schedules.find_by(id: params[:id])
+    #redirect_to schedules_path, notice: "Please login first !" if @schedule.nil?
+    redirect_to "/schedules/login_check", notice: "PLEASE LOGIN FIRST !" if @schedule.nil?
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_schedule
@@ -80,7 +90,7 @@ class SchedulesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def schedule_params
-      params.require(:schedule).permit(:title, :day, :lecture, :room, :lesson)
+      params.require(:schedule).permit(:title, :day, :lecture, :room, :lesson, :user_id)
     end
 
 end

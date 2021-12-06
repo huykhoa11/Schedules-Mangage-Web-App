@@ -12,6 +12,13 @@
   </head>
 
   <body>
+
+    <div class="container">
+      <% if notice %>
+        <%= render "schedules/alert" %>
+      <% end %>
+    <br>
     <%= yield %>
+  </div>
   </body>
 </html>

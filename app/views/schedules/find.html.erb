@@ -1,6 +1,4 @@
-<p id="notice"><%= notice %></p>
 
-<div class="container">
 <h1 style="color: green;">Search Lecture</h1><hr><br>
 
 <%= form_tag(controller: "schedules", action: "find") do %>
@@ -11,11 +9,9 @@
         <div class="col-sm-8">
             <%= submit_tag "Search",  class: "btn btn-outline-success my-2 my-sm-0"%>
         </div>
-
-</div>
 <% end %>
 
-<br>
+<br><br><br>
 <table class="table table-striped">
   <tr>
     <th>Title</th><th>Day</th><th>Lecture</th><th>Room</th><th></th>
@@ -32,7 +28,7 @@
 </table>
 
 <div class="actions">
-    <%= link_to '戻る', schedules_path, class: 'btn btn-info' %>
+    <%= link_to '戻る', "/schedules/login_check", class: 'btn btn-info' %>
   </div><br>
 
 </div>

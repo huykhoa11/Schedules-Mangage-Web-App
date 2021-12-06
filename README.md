@@ -1,24 +1,10 @@
 # README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
+Ruby on Rails application
+* Ruby version 6.1
+* Database PostgreSQL
 * ...
+
+# Preview
+
+![image](https://user-images.githubusercontent.com/69473375/144902680-510217af-f0e2-42c4-b0b8-953ce6bcdffd.png)
+

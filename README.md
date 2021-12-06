@@ -1,7 +1,7 @@
 # README
 Ruby on Rails application
 * Ruby version 6.1
-* Database: Default SQLite3
+* Database: default SQLite3
 * ...
 
 # Preview

@@ -33,6 +33,8 @@ default: &default
     - .woff2
 
   extensions:
+    - .coffee
+    - .erb
     - .mjs
     - .js
     - .sass

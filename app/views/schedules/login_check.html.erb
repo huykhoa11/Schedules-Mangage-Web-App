@@ -59,8 +59,12 @@
 </nav>
 
 <div class="container">
-
-<h1>Schedules</h1>
+<br>
+<h1> Hi 
+<span style="color: greenyellow"><%= current_user.email %></span>,
+Welcome back !!
+</h1>
+<br>
 
 
 <table class="table table-bordered table-hover">
@@ -172,7 +176,7 @@
 
     <tr>
       <th scope="row">2限</th>
-      <th>9:00 ~ 10:30</th>
+      <th>10:40 ~ 12:10</th>
       <td>
         <% @schedules.each do |schedule| %>
         <% if schedule.user == current_user %>
@@ -270,7 +274,7 @@
 
     <tr>
       <th scope="row">3限</th>
-      <th>9:00 ~ 10:30</th>
+      <th>12:50 ~ 14:20</th>
       <td>
         <% @schedules.each do |schedule| %>
         <% if schedule.user == current_user %>
@@ -363,7 +367,7 @@
 
     <tr>
       <th scope="row">4限</th>
-      <th>9:00 ~ 10:30</th>
+      <th>14:30 ~ 16:00</th>
       <td>
         <% @schedules.each do |schedule| %>
         <% if schedule.user == current_user %>
@@ -456,7 +460,7 @@
 
     <tr>
       <th scope="row">5限</th>
-      <th>9:00 ~ 10:30</th>
+      <th>16:10 ~ 17:40</th>
       <td>
         <% @schedules.each do |schedule| %>
         <% if schedule.user == current_user %>
@@ -547,10 +551,10 @@
 </table>
 
 
-<br>
-
+  <br>
   <%= link_to 'Add New Lecture', new_schedule_path, class: "btn btn-warning" %>
-
+  <br><br>
+  <%= tweet_button %>
 </div>
 
 </body>

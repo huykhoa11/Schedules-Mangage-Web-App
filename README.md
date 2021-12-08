@@ -1,24 +1,11 @@
 # README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
+Schedules App made in Ruby and Ruby on Rails to manage lesson plan in school. This app is CRUD app so users can create, add, edit and delete lessons. Furthermore, users can search the lesson on this app and required to login/sign on first use screen.
+Ruby on Rails application with Bootstrap
+* Ruby version 6.1
+* Database: default SQLite3
 * ...
+
+# Preview
+
+![image](https://user-images.githubusercontent.com/69473375/144902680-510217af-f0e2-42c4-b0b8-953ce6bcdffd.png)
+

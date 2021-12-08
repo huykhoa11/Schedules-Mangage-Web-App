@@ -1,5 +1,5 @@
 # README
-Schedules App made in Ruby and Ruby on Rails to manage lesson plan in school. This app is CRUD app so users can create, add, edit and delete lessons. Furthermore, users can search the lesson on this app and required to login/sign on first use screen.
+Schedules App made in Ruby and Ruby on Rails to manage lesson plan in school. This app is CRUD app so users can create, add, edit and delete lessons. Furthermore, users can search the lesson on this app and required to login/sign on first use screen. Use "Social-share-button" gem to create Twitter share button.
 Ruby on Rails application with Bootstrap
 * Ruby version 6.1
 * Database: default SQLite3

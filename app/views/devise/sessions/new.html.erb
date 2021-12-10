@@ -1,17 +1,21 @@
-
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div class="card">
+  <div class="card-header">
+    <h4>Log in</h4>
+  </div>
+  <div class="card-body">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="form-group">
+    <% f.label :email %>
+    <label for="exampleInputEmail1">Email address</label>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
   </div>
 
   <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+    <% f.label :password %>
+    <label for="exampleInputEmail1">Password</label>
+    <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
   </div>
-
+  <br>
   <% if devise_mapping.rememberable? %>
     <div class="field">
       <%= f.check_box :remember_me %>
@@ -20,12 +24,20 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log in", class: "btn btn-secondary" %>
   </div>
 <% end %>
-
+<br>
 <%= render "devise/shared/links" %>
 
 <br>
 <%= link_to 'Back to HomePage', "/schedules", class: "btn btn-warning" %>
+  </div>
+</div>
+
+
+
+
+
+
 

@@ -6,6 +6,12 @@ Ruby on Rails application with Bootstrap
 * ...
 
 # Preview
+<h3>Login page</h3>
 
-![image](https://user-images.githubusercontent.com/69473375/144902680-510217af-f0e2-42c4-b0b8-953ce6bcdffd.png)
+![image](https://user-images.githubusercontent.com/69473375/145602422-e0dfed96-6a0b-43af-a4d7-6a11ec2838cb.png)
+<br><br>
+<h3>Main page</h3>
+
+![image](https://user-images.githubusercontent.com/69473375/145602657-68539262-5f55-455b-94a3-c3ffda0d8d65.png)
+
 

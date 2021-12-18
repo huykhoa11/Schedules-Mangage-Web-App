@@ -12,22 +12,26 @@
 <% end %>
 
 <br><br><br>
-<table class="table table-striped">
-  <tr>
-    <th>Title</th><th>Day</th><th>Lecture</th><th>Room</th><th>Student</th>
-  </tr> 
-  <% @schedules.each do |obj| %>
-    <% if obj.user == current_user %>
-      <tr>
-        <td><%= link_to "#{obj.title}", obj %></td>
-        <td><%= obj.day %></td>
-        <td><%= obj.lecture %></td>
-        <td><%= obj.room %></td>
-        <td><%= current_user.email %></td>
+<div class="table-responsive">
+  <table class="table table-light table-bordered table-hover">
+    <thead>
+      <tr style="background-color: #DFDFDF">
+        <th>Title</th><th>Day</th><th>Lecture</th><th>Room</th><th>Student</th>
       </tr>
+    </thead> 
+    <% @schedules.each do |obj| %>
+      <% if obj.user == current_user %>
+        <tr>
+          <td><%= link_to "#{obj.title}", obj %></td>
+          <td><%= obj.day %></td>
+          <td><%= obj.lecture %></td>
+          <td><%= obj.room %></td>
+          <td><%= current_user.email %></td>
+        </tr>
+      <% end %>
     <% end %>
-  <% end %>
-</table>
+  </table>
+</div>
 
 <div class="actions">
     <%= link_to '戻る', "/schedules/login_check", class: 'btn btn-info' %>

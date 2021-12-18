@@ -15,4 +15,8 @@ Ruby on Rails application with Bootstrap
 
 ![image](https://user-images.githubusercontent.com/69473375/145602657-68539262-5f55-455b-94a3-c3ffda0d8d65.png)
 
+<h3>Search Page</h3>
+
+![image](https://user-images.githubusercontent.com/69473375/146627828-e9a24372-c40f-4127-b0ab-e7f0b198fb3a.png)
+
 

@@ -1,7 +1,7 @@
 class SchedulesController < ApplicationController
   before_action :set_schedule, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, only: :login_check
-  before_action :correct_user, only: [:edit, :update, :find, :destroy]
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   # GET /schedules or /schedules.json
   def index
@@ -15,7 +15,7 @@ class SchedulesController < ApplicationController
  def find
     #@schedules = Schedule.all
     @schedules = current_user.schedules
-    @schedules = Array.new
+    # @schedules = Array.new
     if request.post? then
       @schedules = Schedule.where "title like ?",'%' + params[:find] + '%'
     end

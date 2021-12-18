@@ -14,16 +14,18 @@
 <br><br><br>
 <table class="table table-striped">
   <tr>
-    <th>Title</th><th>Day</th><th>Lecture</th><th>Room</th><th></th>
-  </tr>
+    <th>Title</th><th>Day</th><th>Lecture</th><th>Room</th><th>Student</th>
+  </tr> 
   <% @schedules.each do |obj| %>
-  <tr>
-    <td><%= obj.title %></td>
-    <td><%= obj.day %></td>
-    <td><%= obj.lecture %></td>
-    <td><%= obj.room %></td>
-    <td><%= link_to '表示 ', obj, class: 'btn btn-outline-dark' %></td>
-  </tr>
+    <% if obj.user == current_user %>
+      <tr>
+        <td><%= link_to "#{obj.title}", obj %></td>
+        <td><%= obj.day %></td>
+        <td><%= obj.lecture %></td>
+        <td><%= obj.room %></td>
+        <td><%= current_user.email %></td>
+      </tr>
+    <% end %>
   <% end %>
 </table>
 
